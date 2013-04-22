@@ -25,7 +25,7 @@ module Crudify
         :sortable => true,
         :searchable => true,
         :include => [],
-        :order => ('position ASC' if this_class.table_exists? && this_class.column_names.include?('position')), # FIXME
+        # :order => ('position ASC' if this_class.table_exists? && this_class.column_names.include?('position')), # FIXME
         :conditions => '',
         :search_conditions => '',
         :redirect_to_url => "admin_#{plural_name}_url", # FIXME
