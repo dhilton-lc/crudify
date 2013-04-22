@@ -14,9 +14,9 @@ module Crudify
        
        options = ::Crudify::Base.default_options(model_name).merge(options)
        
-       singular_name = model_name.to_s
-       class_name = singular_name.camelize
-       plural_name = singular_name.pluralize
+       singular_name = options[:singular_name] || model_name.to_s
+       class_name = options[:class_name] || singular_name.camelize
+       plural_name = options[:plural_name] || singular_name.pluralize
        
        options[:paginate] = (options[:paginate] && eval(class_name).respond_to?(:paginate))
   

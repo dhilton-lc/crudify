@@ -12,7 +12,7 @@
 module Crudify
 
   module Base
-  
+
     def self.default_options(model_name)
       singular_name = model_name.to_s
       class_name = singular_name.camelize
@@ -25,10 +25,10 @@ module Crudify
         :sortable => true,
         :searchable => true,
         :include => [],
-        :order => ('position ASC' if this_class.table_exists? && this_class.column_names.include?('position')),
+        :order => ('position ASC' if this_class.table_exists? && this_class.column_names.include?('position')), # FIXME
         :conditions => '',
         :search_conditions => '',
-        :redirect_to_url => "admin_#{plural_name}_url",
+        :redirect_to_url => "admin_#{plural_name}_url", # FIXME
         :log => Rails.env == 'development'
       }
     end
